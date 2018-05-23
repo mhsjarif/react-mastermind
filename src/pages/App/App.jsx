@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from 'react-router-dom';
 import './App.css';
 import GamePage from '../GamePage/GamePage';
 import SettingsPage from '../SettingsPage/SettingsPage';
+import ScoresPage from '../ScoresPage/ScoresPage';
 
 let colorTable = [
   {name: 'Easy', colors: ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD']},
@@ -164,6 +166,13 @@ class App extends Component {
                   difficultyLevel={this.state.difficultyLevel}
                   handleDifficultyChange={this.setDifficulty}
                   handleNewGame={this.handleNewGameClick}
+                />
+              }/>
+              <Route exact path='/scores' render={() => 
+                <ScoresPage
+                  // initials={} 
+                  // numGuesses={} 
+                  // seconds={}
                 />
               }/>
             </Switch>
